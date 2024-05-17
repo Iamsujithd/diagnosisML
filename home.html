@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('background_image.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .container {
+            margin: 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Adding some transparency to the navbar */
+            overflow: hidden;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .navbar a.active {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        
+
+        h1 {
+            font-size: 36px;
+        }
+
+        section {
+            margin-top: 150px;
+            margin-left: 20px;
+        }
+
+        p {
+            margin-bottom: 50px;
+            white-space: pre-line;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 150px;
+            margin-right: 50px;
+        }
+
+        .form-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .forgot-password {
+            margin-top: 10px;
+            text-align: right;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 8px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Popup Styling */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="home.html" class="active">Home</a>
+        <a href="signup.html">Sign up</a>
+        <a href="Symptom.html">Select Symptoms</a>
+    </nav>
+    <div class="container">
+        <section>
+            <h1>Disease Prediction System</h1>
+            <p>Select the symptoms you think you might have and it will predict the disease or condition you could be
+                suffering from.<br>
+                You can also find hospitals/clinics for treatment.<br>
+                Your suggestions or comments in the comment box are always welcome.</p>
+        </section>
+        <div class="card">
+            <form>
+                <div class="form-title">Get Started with Vital Eden</div>
+                <input type="text" placeholder="Username">
+                <input type="password" placeholder="Password">
+                <button type="submit">Sign In</button>
+                <div class="forgot-password"><a href="#" onclick="openPopup()">Forgot your password?</a></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Popup HTML -->
+    <div class="overlay" id="overlay">
+        <div class="popup">
+            <h2>Forgot Your Password?</h2>
+            <form>
+                <input type="text" placeholder="Email">
+                <button type="submit" onclick="resetPassword()">Reset Password</button>
+            </form>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <!-- JavaScript for Popup (OPENING CLOSING AND RESETTING OF PASSWORD POPUP WINDOW)-->
+    <script>
+        function openPopup() {
+            document.getElementById("overlay").style.display = "flex";
+        }
+
+        function closePopup() {
+            document.getElementById("overlay").style.display = "none";
+        }
+        function resetPassword() {
+            var popupContent = document.querySelector(".popup");
+            popupContent.innerHTML = "<h2>Password Reset</h2><p>Your new password has been sent to your email.</p><button onclick='closePopup()'>Close</button>";
+        }
+    </script>
+</body>
+
+</html>
