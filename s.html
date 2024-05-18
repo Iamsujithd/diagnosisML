@@ -110,48 +110,8 @@
 
     </div>
 
-    <script>
-        // Function to add a new dropdown field
-        function addField() {
-            var form = document.getElementById('myForm');
-            var numOfFields = form.querySelectorAll('.input-group').length + 1;
-
-            var newInputGroup = document.createElement('div');
-            newInputGroup.className = 'input-group';
-
-            var newLabel = document.createElement('label');
-            newLabel.setAttribute('for', 'field' + numOfFields);
-            newLabel.textContent = 'Field ' + numOfFields + ':';
-
-            var newSelect = document.createElement('select');
-            newSelect.id = 'field' + numOfFields;
-            newSelect.name = 'field' + numOfFields;
-
-            var option1 = document.createElement('option');
-            option1.value = 'option1';
-            option1.textContent = 'Option 1';
-
-            var option2 = document.createElement('option');
-            option2.value = 'option2';
-            option2.textContent = 'Option 2';
-
-            var option3 = document.createElement('option');
-            option3.value = 'option3';
-            option3.textContent = 'Option 3';
-
-            newSelect.appendChild(option1);
-            newSelect.appendChild(option2);
-            newSelect.appendChild(option3);
-
-            newInputGroup.appendChild(newLabel);
-            newInputGroup.appendChild(newSelect);
-
-            form.insertBefore(newInputGroup, document.getElementById('addFieldButton'));
-        }
-
-        // Event listener for the add field button
-        document.getElementById('addFieldButton').addEventListener('click', addField);
-    </script>
 </body>
 
 </html>
+
+

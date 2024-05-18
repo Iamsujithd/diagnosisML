@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('background_image.jpg');
+            background-image: url('/static/background_image.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -49,7 +50,10 @@
             color: white;
         }
 
-        
+        .signup {
+            float: right;
+            /* Align "Sign Up" to the right */
+        }
 
         h1 {
             font-size: 36px;
@@ -139,9 +143,10 @@
 
 <body>
     <nav class="navbar">
-        <a href="home.html" class="active">Home</a>
-        <a href="signup.html">Sign up</a>
-        <a href="Symptom.html">Select Symptoms</a>
+        <a href="http://127.0.0.1:5000" class="active">Home</a>
+        <a href="http://127.0.0.1:5000/signup">Sign up</a>
+        <a href="http://127.0.0.1:5000/Symptom">Select Symptoms</a>
+       
     </nav>
     <div class="container">
         <section>
@@ -174,7 +179,7 @@
         </div>
     </div>
 
-    <!-- JavaScript for Popup (OPENING CLOSING AND RESETTING OF PASSWORD POPUP WINDOW)-->
+    <!-- JavaScript for Popup -->
     <script>
         function openPopup() {
             document.getElementById("overlay").style.display = "flex";
@@ -184,6 +189,8 @@
             document.getElementById("overlay").style.display = "none";
         }
         function resetPassword() {
+            // Here you can add code to handle the password reset process
+            // For now, let's just display a message in the popup
             var popupContent = document.querySelector(".popup");
             popupContent.innerHTML = "<h2>Password Reset</h2><p>Your new password has been sent to your email.</p><button onclick='closePopup()'>Close</button>";
         }
